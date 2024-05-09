@@ -29,25 +29,25 @@ const LandingSection = () => {
       comment: ''
     },
     onSubmit: (values, {resetForm}) => {
-      submit("", values).then(() => {
-        resetForm();
-      });
-      
+      submit('https://john.com/contactme', values);
     },
     validationSchema: Yup.object({
-      firstName: Yup.string()
-        .max(15, 'Must be 15 characters or less')
-        .required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
-      comment: Yup.string().required('Required'),
+      firstName: Yup.string().required("Required"), 
+      email: Yup.string().email("Invalid email address").required("Required"), 
+      comment: Yup.string() 
+          .min(25, "Must be at least 25 characters") 
+          .required("Required"), 
     }),
   });
 
-  useEffect(() => {
-    if (response !== null) {
-      onOpen(response.type, response.message);
-    }
-  },[response]);
+  useEffect(() => { 
+    if (response) { 
+      onOpen(response.type, response.message); 
+      if (response.type === 'success') { 
+        formik.resetForm(); 
+      } 
+    } 
+  }, [response]);
 
   return (
     <FullScreenSection
