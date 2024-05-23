@@ -7,7 +7,7 @@ import {
  faMedium,
  faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Stack } from "@chakra-ui/react";
 
 const socials = [
  {
@@ -32,37 +32,7 @@ const socials = [
  }, 
 ]; 
 
-/** 
-* This component illustrates the use of both the useRef hook and useEffect hook. 
-* The useRef hook is used to create a reference to a DOM element, in order to tweak the header styles and run a transition animation. 
-* The useEffect hook is used to perform a subscription when the component is mounted and to unsubscribe when the component is unmounted. 
-* Additionally, it showcases a neat implementation to smoothly navigate to different sections of the page when clicking on the header elements. 
-*/ 
 const Header = () => { 
- const headerRef = useRef(null); 
- 
- useEffect(() => { 
-   let prevScrollPos = window.scrollY; 
- 
-   const handleScroll = () => { 
-     const currentScrollPos = window.scrollY; 
-     const headerElement = headerRef.current; 
-     if (!headerElement) { 
-       return; 
-     } 
-     if (prevScrollPos > currentScrollPos) { 
-       headerElement.style.transform = "translateY(0)"; 
-     } else { 
-       headerElement.style.transform = "translateY(-200px)"; 
-     } 
-     prevScrollPos = currentScrollPos; 
-   } 
-   window.addEventListener('scroll', handleScroll) 
- 
-   return () => { 
-     window.removeEventListener('scroll', handleScroll) 
-   } 
- }, []); 
  
  const handleClick = (anchor) => () => { 
    const id = `${anchor}-section`; 
@@ -80,17 +50,12 @@ const Header = () => {
      top={0} 
      left={0} 
      right={0} 
-     translateY={0} 
-     transitionProperty="transform" 
-     transitionDuration=".3s" 
-     transitionTimingFunction="ease-in-out" 
      backgroundColor="#18181b" 
-     ref={headerRef} 
    > 
      <Box color="white" maxWidth="1280px" margin="0 auto"> 
-       <HStack 
-         px={16} 
-         py={4} 
+       <Stack direction={[ 'column', 'column', 'row' ]}
+         px={{ base: 2, sm: 4, md: 8, lg: 12 }} 
+         py={2} 
          justifyContent="space-between" 
          alignItems="center" 
        > 
@@ -110,6 +75,9 @@ const Header = () => {
          </nav> 
          <nav> 
            <HStack spacing={8}> 
+             <a href="#aboutme" onClick={handleClick("aboutme")}> 
+               About Me 
+             </a> 
              <a href="#projects" onClick={handleClick("projects")}> 
                Projects 
              </a> 
@@ -118,7 +86,7 @@ const Header = () => {
              </a> 
            </HStack> 
          </nav> 
-       </HStack> 
+       </Stack> 
      </Box> 
    </Box> 
  ); 
