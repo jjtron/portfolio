@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Avatar",
     description: "Avatar",
-    getImageSrc: () => require("../images/Avatar.png"),
+    getImageSrc: () => require("../images/me-pic.png"),
   }
 ];
 
