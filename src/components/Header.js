@@ -12,24 +12,16 @@ import { Box, HStack, Stack } from "@chakra-ui/react";
 const socials = [
  {
    icon: faEnvelope,
-   url: "mailto: hello@example.com",
+   url: "mailto: webmaster@gp-web-dev.com",
  },
  { 
    icon: faGithub, 
-   url: "https://www.github.com/sureskills", 
+   url: "https://www.github.com/jjtron", 
  }, 
  { 
-   icon: faLinkedin, 
-   url: "https://www.linkedin.com/in/sureskills/", 
- }, 
- { 
-   icon: faMedium, 
-   url: "https://medium.com/@sureskills", 
- }, 
- { 
-   icon: faStackOverflow, 
-   url: "https://stackoverflow.com/users/sureskills", 
- }, 
+   icon: faLinkedin,
+   url: "https://www.linkedin.com/in/gerald-petron-74a0242a9?trk=people-guest_people_search-card",
+ },
 ]; 
 
 const Header = () => { 
