@@ -1,6 +1,6 @@
 import { ChakraProvider, Box, Divider } from "@chakra-ui/react";
 import Header from "./components/Header";
-import LandingSection from "./components/LandingSection";
+import LandingSection from "./components/LandingSection"
 import ProjectsSection from "./components/ProjectsSection";
 import ContactMeSection from "./components/ContactMeSection";
 import Footer from "./components/Footer";
@@ -18,7 +18,7 @@ function App() {
         </Box>
 
         <Box id="projects-section" h={['calc(120vh)', 'calc(100vh)']} bg={{ base: 'red.500', sm: 'gray.500', md: 'blue.500', lg: 'green.500' }} >
-          <LandingSection />
+          <ProjectsSection />
         </Box>
 
         <Box id="contactme-section" h={['calc(120vh)', 'calc(100vh)']} bg={{ base: 'red.600', sm: 'gray.600', md: 'blue.600', lg: 'green.600' }} >

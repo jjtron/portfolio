@@ -1,46 +1,47 @@
-import React from "react";
+import { React } from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Image, Box, Heading } from "@chakra-ui/react";
-import Thumbnail from "./OnMimic";
+import ImageModal from "./ImageModal";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+  Box,
+  AspectRatio,
+  Image, HStack
+} from '@chakra-ui/react'
 
-const projects = [
-  {
-    title: "Avatar",
-    description: "Avatar",
-    getImageSrc: () => require("../images/me-pic.png"),
+const ProjectsSection = ({ title, description, imageSrc, size }) => {
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  let img = null;
+  const x = () => {
+    img = "../images/avatar.png";
+    onOpen();
   }
-];
 
-const mainPic = require("../images/Splash.png");
-
-const ProjectsSection = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
       isDarkBackground
-      p={8}
-      alignItems="flex-start"
-      spacing={8}
+      width="100%"
     >
-      <Heading as="h1" id="projects-section">
-        Featured Projects
-      </Heading>
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
-      >
-        <Image src={require("../images/Splash.png")} alt='splash page'/>
-        {projects.map((project) => (
-          <Thumbnail
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            imageSrc={project.getImageSrc()}
-          />
-        ))}
+      <Box pt="100px" w="90%">
+        <HStack>
+          <Image src={(() => require("../images/onMimicSplash.png"))()} alt={title} borderRadius="xl" onClick={onOpen} />
+          <HStack>
+
+          </HStack>
+        </HStack>
       </Box>
-    </FullScreenSection>
+      
+
+      </FullScreenSection>
   );
 };
 
