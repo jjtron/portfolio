@@ -1,47 +1,62 @@
-import { React } from "react";
+import { React, useState } from "react";
 import FullScreenSection from "./FullScreenSection";
-import ImageModal from "./ImageModal";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  Button,
-  Box,
-  AspectRatio,
-  Image, HStack
-} from '@chakra-ui/react'
+import { Box, Heading } from "@chakra-ui/react";
+import Card from "./Card";
 
-const ProjectsSection = ({ title, description, imageSrc, size }) => {
+const projects = [
+  {
+    title: "React Space",
+    description: 0,
+    getImageSrc: () => require("../images/onMimicSplash.png"),
+  },
+  {
+    title: "React Infinite Scroll",
+    description: 1,
+    getImageSrc: () => require("../images/avatar.png"),
+  },
+  {
+    title: "Photo Gallery",
+    description: 2,
+    getImageSrc: () => require("../images/registration.png"),
+  },
+  {
+    title: "Event planner",
+    description: 3,
+    getImageSrc: () => require("../images/profileManagement.png"),
+  },
+];
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  let img = null;
-  const x = () => {
-    img = "../images/avatar.png";
-    onOpen();
-  }
+const ProjectsSection = () => {
+  const [isLarge, setIsLarge] = useState(-1);
 
   return (
     <FullScreenSection
+      backgroundColor="#14532d"
       isDarkBackground
-      width="100%"
+      p={8}
+      alignItems="flex-start"
+      spacing={8}
     >
-      <Box pt="100px" w="90%">
-        <HStack>
-          <Image src={(() => require("../images/onMimicSplash.png"))()} alt={title} borderRadius="xl" onClick={onOpen} />
-          <HStack>
-
-          </HStack>
-        </HStack>
+      <Heading as="h1" id="projects-section">
+        Featured Projects
+      </Heading>
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridGap={8}
+      >
+        {projects.map((project) => (
+          <Card
+            isEnlarged={isLarge === project.description}
+            onEnlarge={() => setIsLarge(project.description)}
+            key={project.title}
+            title={project.title}
+            description={project.description}
+            imageSrc={project.getImageSrc()}
+          />
+        ))}
       </Box>
-      
-
-      </FullScreenSection>
+    </FullScreenSection>
   );
 };
 
