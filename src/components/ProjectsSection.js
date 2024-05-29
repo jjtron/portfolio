@@ -1,7 +1,8 @@
 import { React, useState } from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, HStack, VStack, Image } from "@chakra-ui/react";
 import Card from "./Card";
+import clsx from 'clsx';
 
 const projects = [
   {
@@ -31,20 +32,14 @@ const ProjectsSection = () => {
 
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
       isDarkBackground
-      p={8}
-      alignItems="flex-start"
-      spacing={8}
+      width="100%"
     >
-      <Heading as="h1" id="projects-section">
+      <Heading pt="50px" as="h1" id="projects-section">
         Featured Projects
       </Heading>
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
-      >
+
+      <HStack>
         {projects.map((project) => (
           <Card
             isEnlarged={isLarge === project.description}
@@ -55,7 +50,18 @@ const ProjectsSection = () => {
             imageSrc={project.getImageSrc()}
           />
         ))}
-      </Box>
+      </HStack>
+      <VStack>
+
+        {projects.map((project) => (
+          <div key={project.title} className={clsx({'hidden' : !(isLarge === project.description), 'block' : (isLarge === project.description) })}>
+
+              <Image boxSize="calc(70vh)" id={project.description} src={project.getImageSrc()} alt='Dan Abramov' />
+
+          </div>
+        ))}
+      </VStack>
+      
     </FullScreenSection>
   );
 };
