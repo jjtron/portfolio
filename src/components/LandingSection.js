@@ -39,6 +39,7 @@ const LandingSection = () => (
         of this century, extensively upgrading it, troubleshooting it, and making it compliant with government accessibility requirements.</Text>
         <Text fontSize={['xs', 'md']}>Prior to the above experience, I had been using basic web-site technology since the late 1990's to modernize factory configuration
         management systems, mainly using basic HTML, CSS, and Javascript, even before there was such a thing as a front-end Javascrip framework.</Text>
+        <a href="https://www.vecteezy.com/free-png/hand-icon">Hand Icon PNGs by Vecteezy</a>
     </Stack>
     <nav>
       <HStack spacing={8}> 

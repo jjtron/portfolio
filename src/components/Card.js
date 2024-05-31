@@ -8,7 +8,7 @@ const Card = ({ isEnlarged, onEnlarge, title, description, imageSrc }) => {
 
   return (
       <div className={clsx({'opacity-100' : !isEnlarged, 'opacity-50' : isEnlarged })}>
-        <Image boxSize="50px" id={description} src={imageSrc} alt='Dan Abramov' borderTopRadius="10px" onClick={onEnlarge} />
+        <Image boxSize="50px" id={description} src={imageSrc} alt='Dan Abramov' borderRadius="5px" onClick={onEnlarge} />
       </div>
   );
 };

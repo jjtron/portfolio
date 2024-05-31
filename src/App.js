@@ -22,7 +22,7 @@ function App() {
         </Box>
 
         <Box id="contactme-section" h={['calc(120vh)', 'calc(100vh)']} bg={{ base: 'red.600', sm: 'gray.600', md: 'blue.600', lg: 'green.600' }} >
-          <LandingSection />
+          <ContactMeSection />
         </Box>
         {/*
           <Header />
