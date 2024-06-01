@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Heading, HStack, VStack, Divider, Image, Text, Link } from "@chakra-ui/react";
+import { Heading, HStack, Divider, Image, Text } from "@chakra-ui/react";
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Card from "./Card";
 import clsx from 'clsx';
@@ -40,14 +40,12 @@ const projects = [
 
 const ProjectsSection = () => {
   const [isLarge, setIsLarge] = useState(-1);
-
   return (
     <FullScreenSection
       isDarkBackground
       width="100%"
     >
-      <Heading pt="50px" as="h1" id="projects-section">My work at M2 Systems, Corp</Heading>
-
+      <Heading pt="50px" size='lg' id="projects-section">My work at M2 Systems, Corp</Heading>
       <HStack>
         {projects.map((project) => (
           <Card
@@ -60,22 +58,50 @@ const ProjectsSection = () => {
           />
         ))}
       </HStack>
-      
-      {projects.map((project) => (
+      {projects.map((project, i) => (
         <div key={project.title} className={clsx({'hidden' : !(isLarge === project.description), 'block' : (isLarge === project.description) })}>
-          <VStack>
-            <Image h="calc(60vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />
+          <div className="flex flex-col">
+            <Image h="calc(65vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />
             <Text fontSize={['xs', 'md']}>{project.description}</Text>
-          </VStack>
+            { (() => {
+                if (i === 1) {
+                  return (
+                    <a 
+                      href='https://www.vecteezy.com/' 
+                      target="_blank" 
+                      className="extra-small-font mt-[-4px]"
+                    >
+                      Hand and location icons by Vecteezy, go to
+                      <ExternalLinkIcon mx='1px' />
+                    </a>
+                  )
+                }
+              })()
+            }
+            <Divider orientation='horizontal' />
+            <a 
+              href='https://www.gp-web-dev.com/' 
+              target="_blank" 
+            >
+              {(() => {
+                if (i === 5) {
+                  return (
+                    <>
+                      <p className="extra-small-font">For another sample of my work,</p>
+                      <p className="extra-small-font">(a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
+                    </>
+                  )
+                } else {
+                  return (
+                    <p className="extra-small-font mt-2">For another sample of my work,
+                     (a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
+                  )
+                }
+              })()}
+            </a>
+          </div>
         </div>
       ))}
-      <Divider orientation='horizontal' />
-      <footer>
-      <Link href='https://gp-web-dev.com' isExternal>
-        For another sample of my work (my own personal React project), go to<ExternalLinkIcon mx='2px' />
-      </Link>
-      </footer>
-      
     </FullScreenSection>
   );
 };
