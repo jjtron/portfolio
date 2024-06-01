@@ -19,7 +19,7 @@ const projects = [
   {
     title: "File mgmnt depiction",
     description: "File management UI",
-    getImageSrc: () => require("../images/fileManagement.png"),
+    getImageSrc: () => require("../images/fileManagementOrig.png"),
   },
   {
     title: "Registration depiction",
@@ -61,7 +61,15 @@ const ProjectsSection = () => {
       {projects.map((project, i) => (
         <div key={project.title} className={clsx({'hidden' : !(isLarge === project.description), 'block' : (isLarge === project.description) })}>
           <div className="flex flex-col">
-            <Image h="calc(65vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />
+            { (() => {
+                if (i === 2) {
+                  return (<Image h="calc(45vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                } else {
+                  return (<Image h="calc(65vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                }
+              })()
+            }
+            
             <Text fontSize={['xs', 'md']}>{project.description}</Text>
             { (() => {
                 if (i === 1) {
