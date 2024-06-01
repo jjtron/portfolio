@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Heading, HStack, Divider, Image, Text } from "@chakra-ui/react";
 import { ExternalLinkIcon } from '@chakra-ui/icons'
