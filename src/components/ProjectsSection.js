@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Heading, HStack, Divider, Image, Text } from "@chakra-ui/react";
+import { Heading, HStack, Divider, Image, Text, Center, useBreakpointValue } from "@chakra-ui/react";
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Card from "./Card";
 import clsx from 'clsx';
@@ -40,12 +40,14 @@ const projects = [
 
 const ProjectsSection = () => {
   const [isLarge, setIsLarge] = useState(-1);
+  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'})
+
   return (
     <FullScreenSection
       isDarkBackground
       width="100%"
     >
-      <Heading pt="50px" size='lg' id="projects-section">My work at M2 Systems, Corp</Heading>
+      <Heading pt={["90px", "85px", "40px"]} size={['sm', 'md', 'lg']} id="projects-section">My work at M2 Systems, Corp</Heading>
       <HStack>
         {projects.map((project) => (
           <Card
@@ -58,18 +60,21 @@ const ProjectsSection = () => {
           />
         ))}
       </HStack>
+      
       {projects.map((project, i) => (
         <div key={project.title} className={clsx({'hidden' : !(isLarge === project.description), 'block' : (isLarge === project.description) })}>
-          <div className="flex flex-col">
+          <Center>
+          <div className="flex flex-col w-[85%]">
             { (() => {
-                if (i === 2) {
-                  return (<Image h="calc(45vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                if (i === 4 && (breakPoint === "lg" || breakPoint === "md")) {
+                  return (<Image h="calc(50vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                } else if (breakPoint === "base" && i === 5) {
+                  return (<Image h="calc(40vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 } else {
-                  return (<Image h="calc(65vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                  return (<Image id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 }
               })()
             }
-            
             <Text fontSize={['xs', 'md']}>{project.description}</Text>
             { (() => {
                 if (i === 1) {
@@ -92,11 +97,11 @@ const ProjectsSection = () => {
               target="_blank" 
             >
               {(() => {
-                if (i === 5) {
+                if (breakPoint === "base" && i === 5) {
                   return (
                     <>
-                      <p className="extra-small-font">For another sample of my work,</p>
-                      <p className="extra-small-font">(a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
+                      <p className="super-small-font">For another sample of my work,</p>
+                      <p className="super-small-font">(a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
                     </>
                   )
                 } else {
@@ -108,6 +113,7 @@ const ProjectsSection = () => {
               })()}
             </a>
           </div>
+          </Center>
         </div>
       ))}
     </FullScreenSection>
