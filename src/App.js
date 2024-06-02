@@ -25,7 +25,7 @@ function App() {
         >
           <LandingSection
             isNarrow={isNarrow}
-            onRequestMore={() => setSectionLength(120)}
+            onRequestMore={() => setSectionLength(150)}
             onRequestLess={() => setSectionLength(100)}
             requestedLength={sectionLength} />
         </Box>
