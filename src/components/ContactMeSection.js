@@ -11,6 +11,8 @@ import {
   Select,
   Textarea,
   VStack,
+  Center,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
 import FullScreenSection from "./FullScreenSection";
@@ -49,6 +51,8 @@ const LandingSection = () => {
     } 
   }, [response]);
 
+  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'})
+
   return (
     <FullScreenSection
       isDarkBackground
@@ -56,13 +60,12 @@ const LandingSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
-        <Heading as="h1" id="contactme-section">
-          Contact me
-        </Heading>
+      <VStack w="1024px" p={32} pt={10} alignItems="flex-start">
+        <Heading id="contactme-section">Contact me {breakPoint} </Heading>
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
-            <VStack spacing={4}>
+            <Center>
+            <VStack spacing={4} w={["30%", "50%", "75%", "100%"]}>
               <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
@@ -101,7 +104,9 @@ const LandingSection = () => {
               <Button isLoading={isLoading} loadingText='Submitting' type="submit" colorScheme="purple" width="full">
                 Submit 
               </Button>
+              
             </VStack>
+            </Center>
           </form>
         </Box>
       </VStack>
