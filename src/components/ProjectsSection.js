@@ -39,7 +39,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  const [isLarge, setIsLarge] = useState(-1);
+  const [isLarge, setIsLarge] = useState("Web-site description and Doctor/Patient Portal Entry page");
   const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'})
 
   return (
