@@ -51,7 +51,7 @@ const LandingSection = () => {
     } 
   }, [response]);
 
-  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'})
+  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl', '2xl': '2xl'})
 
   return (
     <FullScreenSection
@@ -60,8 +60,9 @@ const LandingSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack w="1024px" p={32} pt={10} alignItems="flex-start">
-        <Heading id="contactme-section">Contact me {breakPoint} </Heading>
+      <Center>
+      <VStack w="1024px" p={32} pt={10}>
+        <Heading id="contactme-section">Contact me</Heading>
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
             <Center>
@@ -110,6 +111,7 @@ const LandingSection = () => {
           </form>
         </Box>
       </VStack>
+      </Center>
     </FullScreenSection>
   );
 };
