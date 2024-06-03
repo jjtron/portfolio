@@ -11,8 +11,6 @@ import Alert from "./components/Alert";
 function App() {
 
   const [sectionLength, setSectionLength] = useState(100);
-  const mediaWidth = (typeof window !== 'undefined') ? window.innerWidth : 2000;
-  const isNarrow = mediaWidth < 600 ? true : false;
 
   return (
     <ChakraProvider>
@@ -24,7 +22,6 @@ function App() {
               bg={{ base: 'red.400', sm: 'gray.400', md: 'blue.400', lg: 'green.400' }}
         >
           <LandingSection
-            isNarrow={isNarrow}
             onRequestMore={() => setSectionLength(150)}
             onRequestLess={() => setSectionLength(100)}
             requestedLength={sectionLength} />
