@@ -40,7 +40,7 @@ const projects = [
 
 const ProjectsSection = () => {
   const [isLarge, setIsLarge] = useState("Web-site description and Doctor/Patient Portal Entry page");
-  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'})
+  const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl', '2xl': '2xl'})
 
   return (
     <FullScreenSection
@@ -66,8 +66,8 @@ const ProjectsSection = () => {
           <Center>
           <div className="flex flex-col w-[85%]">
             { (() => {
-                if (i === 4 && (breakPoint === "lg" || breakPoint === "md")) {
-                  return (<Image h="calc(50vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                if (i === 4 && (breakPoint === "lg" || breakPoint === "md" || breakPoint === "xl" || breakPoint === "2xl")) {
+                  return (<Image h="calc(60vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 } else if (breakPoint === "base" && i === 5) {
                   return (<Image h="calc(40vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 } else {
