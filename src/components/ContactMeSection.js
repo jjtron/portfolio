@@ -58,13 +58,12 @@ const LandingSection = () => {
       isDarkBackground
       width="100%"
     >
-      <Center>
-      <VStack w="1024px" p={32} pt={10}>
+      <VStack w="100%" pt={20}>
         <Heading id="contactme-section">Contact me</Heading>
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
             <Center>
-            <VStack spacing={4} w={["30%", "50%", "75%", "100%"]}>
+            <VStack spacing={4} w='100'>
               <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
@@ -103,13 +102,11 @@ const LandingSection = () => {
               <Button isLoading={isLoading} loadingText='Submitting' type="submit" colorScheme="purple" width="full">
                 Submit 
               </Button>
-              
             </VStack>
             </Center>
           </form>
         </Box>
       </VStack>
-      </Center>
     </FullScreenSection>
   );
 };

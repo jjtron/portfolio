@@ -1,13 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
  faGithub,
- faLinkedin,
- faMedium,
- faStackOverflow,
+ faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack, Stack } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom"
 
 const socials = [
  {
@@ -26,20 +25,13 @@ const socials = [
 
 const Header = () => { 
  
- const handleClick = (anchor) => () => { 
-   const id = `${anchor}-section`; 
-   const element = document.getElementById(id); 
-   if (element) { 
-     element.scrollIntoView({ 
-       behavior: "smooth", 
-       block: "start", 
-     }); 
-   } 
- }; 
+ const navigate = useNavigate();
+ const handleClick = (anchor) => () => { navigate(`/${anchor}`); };
+
  return ( 
    <Box 
      position="fixed"
-     w={['50%', '100%']}
+     w='100%'
      top={0} 
      left={0} 
      right={0} 
@@ -68,13 +60,13 @@ const Header = () => {
          </nav> 
          <nav> 
            <HStack spacing={8}> 
-             <a href="#aboutme" onClick={handleClick("aboutme")}> 
+             <a href="aboutme" onClick={handleClick("aboutme")}> 
                About Me 
              </a> 
-             <a href="#projects" onClick={handleClick("projects")}> 
+             <a href="projects" onClick={handleClick("projects")}> 
                Projects 
              </a> 
-             <a href="#contactme" onClick={handleClick("contactme")}> 
+             <a href="contactme" onClick={handleClick("contactme")}> 
                Contact Me 
              </a> 
            </HStack> 

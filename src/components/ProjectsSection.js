@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Heading, HStack, Divider, Image, Text, Center, useBreakpointValue } from "@chakra-ui/react";
+import { Heading, HStack, Image, Text, Center, useBreakpointValue } from "@chakra-ui/react";
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Card from "./Card";
 import clsx from 'clsx';
