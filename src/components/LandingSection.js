@@ -21,7 +21,7 @@ const LandingSection = ({onRequestMore, onRequestLess, requestedLength}) => {
         />
       </Box>
       <Heading size='lg' noOfLines={1}>Hello, I'm Gerald Petron</Heading>
-      <Heading size='md' noOfLines={1}>(you can call me Jerry){`${breakPoint}`}</Heading>
+      <Heading size='md' noOfLines={1}>(you can call me Jerry)</Heading>
 
       <Stack spacing={3} w="80%" textAlign="left" >
         <Text fontSize={['xs', 'xs', 'sm', 'md']}>I'm a full stack developer, practiced in commercial experience with AngularJS, and NodeJS; having recently

@@ -67,11 +67,11 @@ const ProjectsSection = () => {
           <div className="flex flex-col w-[85%]">
             { (() => {
                 if (i === 4 && (breakPoint === "lg" || breakPoint === "md" || breakPoint === "xl" || breakPoint === "2xl")) {
-                  return (<Image h="calc(60vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                  return (<Image rounded='md' h="calc(60vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 } else if (breakPoint === "base" && i === 5) {
-                  return (<Image h="calc(40vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                  return (<Image rounded='md' h="calc(40vh)" id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 } else {
-                  return (<Image id={project.description} src={project.getImageSrc()} alt={project.title} />)
+                  return (<Image rounded='md' id={project.description} src={project.getImageSrc()} alt={project.title} />)
                 }
               })()
             }
@@ -91,7 +91,6 @@ const ProjectsSection = () => {
                 }
               })()
             }
-            <Divider orientation='horizontal' />
             <a 
               href='https://www.gp-web-dev.com/' 
               target="_blank" 

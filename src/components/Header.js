@@ -39,7 +39,7 @@ const Header = () => {
  return ( 
    <Box 
      position="fixed"
-     w="100%"
+     w={['50%', '100%']}
      top={0} 
      left={0} 
      right={0} 

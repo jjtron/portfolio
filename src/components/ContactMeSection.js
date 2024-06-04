@@ -56,9 +56,7 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
-      py={16}
-      spacing={8}
+      width="100%"
     >
       <Center>
       <VStack w="1024px" p={32} pt={10}>
