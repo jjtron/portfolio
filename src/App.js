@@ -1,4 +1,4 @@
-import { ChakraProvider, Box, Divider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection"
@@ -26,7 +26,7 @@ function App() {
           <Route path="/aboutme" element={
             <Box  id="aboutme-section"
                   h={`calc(${sectionLength}vh)`}
-                  bg={{ base: 'red.400', sm: 'gray.400', md: 'blue.400', lg: 'green.400' }}
+                  bg='gray.800'
             >
               <LandingSection
                 onRequestMore={() => setSectionLength(150)}
@@ -37,18 +37,21 @@ function App() {
           } />
 
           <Route path="/projects" element={
-            <Box id="projects-section" h={['calc(120vh)', 'calc(100vh)']} bg={{ base: 'red.500', sm: 'gray.500', md: 'blue.500', lg: 'green.500' }} >
+            <Box id="projects-section" h={['calc(120vh)', 'calc(100vh)']} bg='gray.800' >
               <ProjectsSection />
             </Box>
           } />
 
           <Route path="/contactme" element={
-            <Box id="contactme-section" h={['calc(120vh)', 'calc(100vh)']} bg={{ base: 'red.600', sm: 'gray.600', md: 'blue.600', lg: 'green.600' }} >
+            <Box id="contactme-section" h={['calc(120vh)', 'calc(100vh)']} bg='gray.800' >
               <ContactMeSection />
             </Box>
           } />
 
         </Routes>
+
+        <Alert />
+
         {/*
           <Header />
           <LandingSection />
@@ -57,6 +60,7 @@ function App() {
           <Footer />
           <Alert />
         */}
+
         </main>
       </AlertProvider>
     </ChakraProvider>

@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       isDarkBackground
       width="100%"
     >
-      <Heading pt={["90px", "85px", "40px"]} size={['sm', 'md', 'lg']} id="projects-section">My work at M2 Systems, Corp</Heading>
+      <Heading pt={["95px", "80px"]} size={['sm', 'md', 'lg']} id="projects-section">My work at M2 Systems, Corp</Heading>
       <HStack>
         {projects.map((project) => (
           <Card
