@@ -46,7 +46,7 @@ const DocumentsSection = () => {
                 <Td px="2px"><a href='/Coursera_TP9R6DGDBPLQ.pdf' target="_blank" ><Image rounded="sm" boxSize="32px" src={`/images/certificate.png`} /></a></Td>
               </Tr>
               <Tr>
-                <Td pl="5px" >Meta Certificate (Node/Express)</Td>
+                <Td pl="5px" >IBM Certificate (Node/Express)</Td>
                 <Td px="2px"><a href='/Coursera_DRKZLABBTF4R.pdf' target="_blank" ><Image rounded="sm" boxSize="32px" src={`/images/certificate.png`} /></a></Td>
               </Tr>
             </Tbody>
