@@ -1,3 +1,18 @@
+
+# To untrack files, it is necessary to remove from the repository the tracked files listed in .gitignore file.
+# Then re-add them and commit your changes.
+# The easiest, most thorough way to do this is to remove and cache all files in the repository,
+# then add them all back. All folders/files listed in .gitignore file will not be tracked.
+# From the top folder in the repository run the following commands:
+
+#           git rm -r --cached .    (the periods is important!)
+#           git add .               (the periods is important!)
+
+# Then commit your changes:
+
+#           git commit -m "Untrack files in .gitignore"
+
+
 # dependencies
 /node_modules
 /.pnp
