@@ -17,6 +17,7 @@ import clsx from 'clsx';
 const DocumentsSection = () => {
   const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl', '2xl': '2xl'})
   const isNarrow = (breakPoint === 'base');
+  const server = 'https://portfolio.gp-web-dev.com:8443/';
   return (
     <>
     <Header />
@@ -34,7 +35,7 @@ const DocumentsSection = () => {
             <Tbody>
               <Tr>
                 <Td pl="5px" >Resume</Td>
-                <Td px="2px"><a href='http://localhost:3000/Gerald_Petron_Resume.pdf' target="_blank" ><Image rounded="sm" boxSize="32px" src={`/images/resume.png`} /></a></Td>
+                <Td px="2px"><a href='/Gerald_Petron_Resume.pdf' target="_blank" ><Image rounded="sm" boxSize="32px" src={`/images/resume.png`} /></a></Td>
               </Tr>
               <Tr>
                 <Td pl="5px" >Diploma</Td>
