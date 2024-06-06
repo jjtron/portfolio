@@ -53,10 +53,10 @@ const ExtraText = ({requestedLength}) => {
   return (
     <div className={clsx({'hidden': requestedLength === 100, 'block': requestedLength === 150 || requestedLength === 'n/a'})}>
       <Stack spacing={3} w="100%" textAlign="left" >
-        <Text fontSize={['xs', 'xs', 'sm', 'md']}>Prior to the above experience, I had been using basic web-site technology since the late 1990's to modernize factory configuration
-          management systems, mainly using basic HTML, CSS, and Javascript, even before there was such a thing as a front-end Javascrip framework.</Text>
         <Text fontSize={['xs', 'xs', 'sm', 'md']}>While at M2 Systems, I also maintained a medical insurance tracking website that had been deployed early in the first decade 
           of this century, extensively upgrading it, troubleshooting it, and making it compliant with government accessibility requirements.</Text>
+        <Text fontSize={['xs', 'xs', 'sm', 'md']}>Prior to the above experience, and for a long time (even in the late 1990's), I had been using basic web-site technology to modernize factory configuration
+          management systems, mainly using basic HTML, CSS, and Javascript, even before there was such a thing as a front-end Javascrip framework.</Text>
       </Stack>
     </div>
   )
