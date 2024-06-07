@@ -24,3 +24,6 @@
 
 # mac files
 .DS_Store
+
+# secruity
+/pages/password.js

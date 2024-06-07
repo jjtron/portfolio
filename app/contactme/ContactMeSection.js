@@ -33,7 +33,7 @@ const LandingSection = () => {
       comment: ''
     },
     onSubmit: (values) => {
-      submit('http://localhost:3001/contactme', values);
+      submit('/api/contactme', values);
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"), 

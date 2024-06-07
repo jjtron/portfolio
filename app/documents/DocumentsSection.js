@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import FullScreenSection from "../FullScreenSection";
 import Header from "../Header";
-import clsx from 'clsx';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const DocumentsSection = () => {
   const breakPoint = useBreakpointValue({ base: 'base', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl', '2xl': '2xl'})
@@ -51,8 +51,15 @@ const DocumentsSection = () => {
               </Tr>
             </Tbody>
           </Table>
-        </TableContainer> 
+        </TableContainer>
       </Box>
+        <a 
+          href='https://www.vecteezy.com/' 
+          target="_blank" 
+          className="extra-small-font mt-[-4px] text-gray-300"
+        >
+          Icons by Vecteezy, go to <ExternalLinkIcon mx='1px' />
+        </a>
     </FullScreenSection>
     </>
   )
