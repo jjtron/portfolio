@@ -98,7 +98,7 @@ const ProjectsSection = () => {
               })()
             }
             <a 
-              href='https://www.gp-web-dev.com/' 
+              href='https://sixquestions.gp-web-dev.com:8443' 
               target="_blank" 
             >
               {(() => {
