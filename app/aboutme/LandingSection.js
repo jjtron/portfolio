@@ -14,19 +14,12 @@ const LandingSection = ({onRequestMore, onRequestLess, requestedLength}) => {
       isDarkBackground
       width="100%"
     >
-      
-      <Box pt={["90px", "90px", "70px", "70px", "70px", "70px"]}>
-        <Image
-          borderRadius='full'
-          boxSize='calc(15vh)'
-          src="/images/me-pic.png"
-          alt='Gerald Petron'
-        />
-      </Box>
-      <Heading size='lg' noOfLines={1}>Hello, I'm Gerald Petron</Heading>
+      <Heading pt={["90px", "90px", "70px", "70px", "70px", "70px"]}
+               size='xl' noOfLines={1}>Hello, I'm Gerald Petron,</Heading>
+      <Heading size='lg' noOfLines={1}>a Web Developer</Heading>
       <Heading size='md' noOfLines={1}>(you can call me Jerry)</Heading>
 
-      <Stack spacing={3} w="80%" textAlign="left" >
+      <Stack pt="40px" spacing={3} w="80%" textAlign="left" >
         <Text fontSize={['xs', 'xs', 'sm', 'md']}>I'm a full stack developer, with commercial experience using AngularJS, and NodeJS; and have recently
           obtained accredited, advanced training and knowledge in React.js.</Text>
         <Text fontSize={['xs', 'xs', 'sm', 'md']}>In my most recent professional experience, I worked at M2 Systems, Corp (Altamonte, Springs, FL). While there, 
