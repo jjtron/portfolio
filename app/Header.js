@@ -1,10 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
- faGithub,
- faLinkedin
-} from "@fortawesome/free-brands-svg-icons";
+import DropdownList from './dropdown';
 import { Box, HStack, Stack, Image } from "@chakra-ui/react";
 import { redirect } from 'next/navigation';
 
@@ -63,15 +58,13 @@ const Header = () => {
              <a href="aboutme" onClick={handleClick("aboutme")} className="extra-small-font md:text-base"> 
                About Me 
              </a> 
-             <a href="projects" onClick={handleClick("projects")} className="extra-small-font md:text-base"> 
-               Projects 
-             </a> 
+             <DropdownList />
              <a href="contactme" onClick={handleClick("contactme")} className="extra-small-font md:text-base"> 
                Contact Me 
              </a> 
              <a href="documents" onClick={handleClick("documents")} className="extra-small-font md:text-base"> 
                Docs
-             </a> 
+             </a>
            </HStack> 
          </nav> 
        </Stack> 
