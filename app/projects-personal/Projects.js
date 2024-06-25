@@ -15,9 +15,9 @@ export default function Projects() {
             <Heading size={['xs','sm', 'md', 'lg', 'xl']} color='white'>Personal Projects</Heading>
             <div className='flex flex-col w-3/5'>
                 <div className='flex flex-row justify-center'>
-                    <div className={clsx('cursor-pointer rounded-t-md mr-0.5 w-1/2 md:pl-4 pl-2 md:text-2xl font-bold text-sm', { 'bg-r160g174b192' : index === 0, 'bg-white' : index=== 1 })}
+                    <div className={clsx('cursor-pointer rounded-t-md mr-0.5 w-1/2 md:pl-4 pl-2 md:text-2xl font-bold text-sm', { 'bg-r160g174b192' : index === 0, 'bg-white text-black text-opacity-40' : index=== 1 })}
                          onClick={() => setIndex(0)} >Six Questions</div>
-                    <div className={clsx('cursor-pointer rounded-t-md w-1/2 md:pl-4 pl-2 md:text-2xl font-bold text-sm', { 'bg-white' : index === 0, 'bg-r160g174b192' : index=== 1 })}
+                    <div className={clsx('cursor-pointer rounded-t-md w-1/2 md:pl-4 pl-2 md:text-2xl font-bold text-sm', { 'bg-white text-black text-opacity-40' : index === 0, 'bg-r160g174b192' : index=== 1 })}
                          onClick={() => setIndex(1)} >Chess</div>
                 </div>
                 <div className={clsx('flex flex-row justify-center', { 'visible' : index === 0, 'hidden' : index=== 1})}>
