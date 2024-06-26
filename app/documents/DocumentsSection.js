@@ -22,7 +22,7 @@ const DocumentsSection = () => {
     <>
     <Header />
     <FullScreenSection isDarkBackground width="100%" >
-      <Box w="300px" mt="150px" border='1px' borderColor='white' >
+      <Box w="300px" mt="40px" border='1px' borderColor='white' >
         <TableContainer>
           <Table variant='simple' size="sm">
             <TableCaption fontSize="lg" placement='top' color="gray.200">My Documents</TableCaption>

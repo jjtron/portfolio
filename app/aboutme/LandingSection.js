@@ -14,8 +14,7 @@ const LandingSection = ({onRequestMore, onRequestLess, requestedLength}) => {
       isDarkBackground
       width="100%"
     >
-      <Heading pt={["90px", "90px", "70px", "70px", "70px", "70px"]}
-               size='xl' noOfLines={1}>Hello, I'm Gerald Petron,</Heading>
+      <Heading size='xl' noOfLines={1}>Hello, I'm Gerald Petron,</Heading>
       <Heading size='lg' noOfLines={1}>a Web Developer</Heading>
       <Heading size='md' noOfLines={1}>(you can call me Jerry)</Heading>
 

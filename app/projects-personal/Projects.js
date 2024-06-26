@@ -9,9 +9,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 export default function Projects() {
     const [index, setIndex] = useState(0);
     return (
-        <Flex align="center" direction='column' h={['calc(120vh)', 'calc(100vh)']} bg='gray.800'
-              pt={["90px", "90px", "65px", "65px", "65px", "65px"]}
-        >
+        <Flex align="center" direction='column' h={['calc(120vh)', 'calc(100vh)']} bg='gray.800'>
             <Heading size={['xs','sm', 'md', 'lg', 'xl']} color='white'>Personal Projects</Heading>
             <div className='flex flex-col w-3/5'>
                 <div className='flex flex-row justify-center'>

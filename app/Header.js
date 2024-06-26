@@ -24,11 +24,7 @@ const Header = () => {
 
  return ( 
    <Box 
-     position="fixed"
      w='100%'
-     top={0} 
-     left={0} 
-     right={0} 
      backgroundColor="#18181b"
    > 
      <Box color="white" maxWidth="1280px" margin="0 auto"> 

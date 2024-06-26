@@ -63,7 +63,7 @@ const LandingSection = () => {
       isDarkBackground
       width="100%"
     >
-      <VStack w="100%" pt={20}>
+      <VStack w="100%">
         <Heading id="contactme-section">Contact me</Heading>
         <Box rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
