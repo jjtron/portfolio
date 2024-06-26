@@ -25,7 +25,7 @@ const DocumentsSection = () => {
       <Box w="300px" mt="40px" border='1px' borderColor='white' >
         <TableContainer>
           <Table variant='simple' size="sm">
-            <TableCaption fontSize="lg" placement='top' color="gray.200">My Documents</TableCaption>
+            <TableCaption fontSize="2xl" placement='top' color="gray.200">My Documents</TableCaption>
             <Thead>
               <Tr>
                 <Th color="gray.400" pl="5px" >Document</Th>

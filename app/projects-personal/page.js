@@ -1,12 +1,14 @@
 "use client"
 import Projects from './Projects';
-import Header from "../Header";
+import { Box } from "@chakra-ui/react";
 
 export default function Page() {
     return (
-        <>
-            <Header />
+        <Box
+            h={['calc(100vh)']}
+            bg='gray.700'
+        >
             <Projects />
-        </>
+        </Box>
     )
 }

@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <Box  id="aboutme-section"
             h={`calc(${sectionLength}vh)`}
-            bg='gray.800'
+            bg='gray.700'
         >
             <LandingSection
                 onRequestMore={() => setSectionLength(150)}

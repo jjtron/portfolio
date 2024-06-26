@@ -1,16 +1,19 @@
 "use client"
-import { Center, Flex, Card, Spacer, CardBody, Text,
-         CardHeader, Heading, Image, HStack, Tabs, Box,
-         TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Flex, Card, CardBody, Text,
+         Heading, Image, HStack } from "@chakra-ui/react";
 import { useState } from 'react';
 import clsx from 'clsx';
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import Header from "../Header";
 
 export default function Projects() {
     const [index, setIndex] = useState(0);
     return (
-        <Flex align="center" direction='column' h={['calc(120vh)', 'calc(100vh)']} bg='gray.800'>
-            <Heading size={['xs','sm', 'md', 'lg', 'xl']} color='white'>Personal Projects</Heading>
+      <>
+        <Header />
+
+        <Flex align="center" direction='column' bg='gray.700'>
+            <Heading p={2} size={['xs','sm', 'md', 'lg', 'xl']} color='white'>Personal Projects</Heading>
             <div className='flex flex-col w-3/5'>
                 <div className='flex flex-row justify-center'>
                     <div className={clsx('cursor-pointer rounded-t-md mr-0.5 w-1/2 md:pl-4 pl-2 md:text-2xl font-bold text-sm', { 'bg-r160g174b192' : index === 0, 'bg-white text-black text-opacity-40' : index=== 1 })}
@@ -71,28 +74,7 @@ export default function Projects() {
                 </div>
             </div>
         </Flex>
+
+    </>
     )
 }
-
-{/* 
-                        <Card bg='gray.400' borderTopRadius={0} p={0}>
-                        <CardBody p={[0, 0, 2]}>
-                            <Text fontSize={['xs','sm', 'md', 'lg', 'xl']} p={2}>
-                                Chess game built on React.
-                            </Text>
-                            <Text fontSize={['xs','sm', 'md', 'lg', 'xl']} p={2}>
-                                <a className='underline underline-offset-2' href='https://chess.gp-web-dev.com:8444/dnd' target="_blank" >
-                                    <i>Go to the web-site </i><ExternalLinkIcon mb='5px'/>
-                                </a>
-                            </Text>
-                            <Text fontSize={['xs','sm', 'md', 'lg', 'xl']} p={2}>
-                                Drag-and-drop component design credit goes to &nbsp;&nbsp;
-                                <a className='underline underline-offset-2' href='https://docs.dndkit.com/' target="_blank" >
-                                    <i>NPM Dnd-Kit </i><ExternalLinkIcon mb='5px'/>
-                                </a></Text>
-                            <HStack justify="center" spacing="5%">
-                                    <Image h="80%" w="80%" src={`/images/chess.png`} alt='chess' />
-                            </HStack>
-                        </CardBody>
-                    </Card>
-    */}

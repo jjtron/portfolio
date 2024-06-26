@@ -2,6 +2,8 @@ import React from "react";
 import DropdownList from './dropdown';
 import { Box, HStack, Stack, Image } from "@chakra-ui/react";
 import { redirect } from 'next/navigation';
+import { useLightingModeContext } from "./context/lightingModeContext";
+import LightingControl from "./LightingControl";
 
 const socials = [
  {
@@ -21,6 +23,8 @@ const socials = [
 const Header = () => { 
 
  const handleClick = (anchor) => () => { redirect(`/${anchor}`); };
+ const lightingMode = useLightingModeContext();
+ function handleMode () { lightingMode.onToggle(); }
 
  return ( 
    <Box 
@@ -65,7 +69,7 @@ const Header = () => {
          </nav> 
        </Stack> 
      </Box> 
-   </Box> 
+   </Box>
  ); 
 }; 
 

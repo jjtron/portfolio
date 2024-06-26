@@ -13,6 +13,7 @@ const LandingSection = ({onRequestMore, onRequestLess, requestedLength}) => {
     <FullScreenSection
       isDarkBackground
       width="100%"
+      backgroundColor="gray.700"
     >
       <Heading size='xl' noOfLines={1}>Hello, I'm Gerald Petron,</Heading>
       <Heading size='lg' noOfLines={1}>a Web Developer</Heading>
