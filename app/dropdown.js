@@ -17,7 +17,7 @@ function DropdownList() {
     return (
         <div className="relative" onMouseOver={() => {setShowDropdown(true)}} onMouseLeave={() => {setShowDropdown(false)}}>
             <p className='cursor-default extra-small-font md:text-base'>Projects</p>
-            <div className={clsx("flex flex-col absolute top-6 left-2 bg-18181b w-[110px] extra-small-font md:text-base", { 'visible' : showDropdown, 'hidden' : !showDropdown })}>
+            <div className={clsx("flex flex-col absolute top-4 md:top-6 left-2 bg-18181b w-[110px] extra-small-font md:text-base", { 'visible' : showDropdown, 'hidden' : !showDropdown })}>
                 <a href="projects-corporate" onClick={handleClick("projects-corporate")} className={clsx("pl-2 extra-small-font md:text-base")}>Corporate</a>
                 <a href="projects-personal" onClick={handleClick("projects-personal")} className={clsx("pl-2 extra-small-font md:text-base")}>Personal</a>
             </div>
