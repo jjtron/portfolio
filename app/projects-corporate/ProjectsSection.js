@@ -97,26 +97,6 @@ const ProjectsSection = () => {
                 }
               })()
             }
-            <a 
-              href='https://sixquestions.gp-web-dev.com:8443' 
-              target="_blank" 
-            >
-              {(() => {
-                if (breakPoint === "base" && i === 5) {
-                  return (
-                    <>
-                      <p className="super-small-font">For another sample of my work,</p>
-                      <p className="super-small-font">(a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
-                    </>
-                  )
-                } else {
-                  return (
-                    <p className="extra-small-font mt-2">For another sample of my work,
-                     (a personal React project), go to<ExternalLinkIcon mx='1px'/></p>
-                  )
-                }
-              })()}
-            </a>
           </div>
           </Center>
         </div>
